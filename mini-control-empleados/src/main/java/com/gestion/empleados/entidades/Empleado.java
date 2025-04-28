@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -32,7 +33,7 @@ public class Empleado {
 	@NotEmpty
 	@Email
 	private String email;
-
+	
 	@NotNull
 	private Long telefono;
 
@@ -44,12 +45,11 @@ public class Empleado {
 
 	@NotNull
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecha;
 
 	public Empleado() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {
@@ -115,5 +115,4 @@ public class Empleado {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-
 }

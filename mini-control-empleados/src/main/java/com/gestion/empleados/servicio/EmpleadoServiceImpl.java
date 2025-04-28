@@ -38,7 +38,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	@Override
 	@Transactional(readOnly = true)
 	public Empleado findOne(Long id) {
-		return empleadoRepository.findById(id).orElse(null);
+		return empleadoRepository.findAll(id).orElse(null);
 	}
 
 	@Override
